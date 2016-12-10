@@ -32,7 +32,7 @@ def car_cost(d):
 def total_cost(d,city):
     return Hotel_cost(d,city)+car_cost(d)
 
-print(total_cost(d,city)) """
+print(total_cost(d,city))
 
 #3rd exercise
 
@@ -55,7 +55,43 @@ Steven = {
     "quizzes": [0.0,75.0,734.0],
     "test": [100.0,100.0],
 }
-print(Billy['homework'])
+
+students = [Billy,Joyce,Steven]
+for student in students:
+    for key in student.keys():
+        print(student.keys())
+
+def average(numbers):
+    total = float(sum(numbers))
+    return total/len(numbers)
+
+def get_average(student):
+    home1 = average(student['homework'])
+    quiz1 = average(student['quizzes'])
+    test1 = average(student['test'])
+    return 0.1*home1+0.4*quiz1+0.5*test1
+
+print(get_average(Steven))"""
 
 
+#4th exercise
+class Shape(object):
+    def shrink(self,factor):
+        return (self)
+    def surface(self):
+        return 0
+class Circle(Shape):
+    def __init__(self,color,radius):
+        self.color = color
+        self.radius  = radius
+    def shrink(self,factor):
+        self.radius += factor
+
+class Square(Shape):
+    def __init__(self,color,side):
+        self.color = color
+        self.side  = side
+    def surface(self,factor):
+        surf = self.side * self.side
+        return surf
 
